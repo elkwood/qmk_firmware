@@ -85,14 +85,16 @@ uint16_t axisCoordinate(uint8_t pin, uint16_t origin) {
     }
     return rangedVal;
 }
-
+ 
 void matrix_scan_user(void) {
   // processNewRanges();
   uint16_t x = axisCoordinate(xPin, xOrigin);
   uint16_t y = axisCoordinate(yPin, yOrigin);
   // dprintf("%" PRIu16 ",", x);
   // dprintf("%" PRIu16 "\n", y);
-  dprintf("x:%d,y:%d -- %d", x,y,-127);
+  int result = atan2(y, x);
+  // result = result * 180.0/M_PI;
+  dprintf("x:%4d,y:%4d -- %4d", x,y, result );
   dprint("\n");
   // int16_t pos = analogRead(xPin);
   //   dprintf("%" PRIu16 "\n", pos);
