@@ -222,5 +222,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 */
 
-#define JOYSTICK_BUTTON_COUNT 0
-#define JOYSTICK_AXES_COUNT 2
+
+#define DEBUG_MATRIX_SCAN_RATE
